@@ -20,6 +20,10 @@
 
         <service android:name=".PlantWateringService" />
 
+        <service
+            android:name=".GridWidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+
         <provider
             android:name=".provider.PlantContentProvider"
             android:authorities="com.example.android.mygarden"
@@ -60,15 +64,6 @@
             <meta-data
                 android:name="android.appwidget.provider"
                 android:resource="@xml/plant_widget_provider_info" />
-        </receiver>
-        <receiver android:name=".PlantWateringService">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/plant_watering_service_info" />
         </receiver>
     </application>
 
